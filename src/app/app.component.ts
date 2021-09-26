@@ -10,8 +10,10 @@ export class AppComponent {
 
   nom : string = '';
   prenom: string = '';
+  tel: string = '';
   erreurNom : string = '';
   erreurPrenom : string = '';
+  erreurTel : string = '';
   date : string = '';
   myCheck = false;
   sf ="";
@@ -22,8 +24,11 @@ export class AppComponent {
     if (this.nom == '') {
       this.erreurNom = 'erreur';
     }
-    if (this.nom == '') {
+    if (this.prenom == '') {
       this.erreurPrenom  = 'erreur';
+    }
+    if (this.tel.length != 8) {
+      this.erreurTel = 'erreur';
     }
   }
 

@@ -3,12 +3,12 @@
   <div style="margin-bottom: 15px; margin-left: 17px;">
   <label> Nom : </label>
   <input type="text" [(ngModel)]="nom" style="margin-left: 17px;">
-  <p style="color: red;" id="errorNom">{{erreurNom}}</p>
+  <p style="color: red;">{{erreurNom}}</p>
 </div>
 <div style="margin-bottom: 15px; margin-left: 17px;">
   <label> Prénom : </label>
   <input type="text" [(ngModel)]="prenom">
-  <p style="color: red;" id="errorPrenom">{{erreurPrenom}}</p>
+  <p style="color: red;">{{erreurPrenom}}</p>
 
 </div>
 <div style="margin-bottom: 15px;">
@@ -21,13 +21,14 @@
 </div>
 <div style="margin-bottom: 10px; margin-left: 45px;">
   <label> Tel : </label>
-  <input type="text" id="tel" />
-  <p style="color: red;" id="errorTel"></p>
+  <input type="text" [(ngModel)]="tel" />
+  <p style="color: red;" id="errorTel">{{erreurTel}}</p>
+
 </div>
 
 <div>
   <label> Situation familiale </label>
-  <select [(ngModel)]="sf" >
+  <select [(ngModel)]="sf">
       <option value="" selected>-</option>
       <option value="C"> Célibataire </option>
       <option value="M"> Marié </option>
@@ -36,7 +37,8 @@
   </select>
 
 </div>
-<div id="divCheck" *ngIf="sf != 'C' && sf != '' ">
+    
+  <div id="divCheck" *ngIf="sf != 'C' && sf != '' ">
   <input type="checkbox" [(ngModel)]="myCheck"  >
   <label for="myCheck"> Avez-vous des enfants ?</label>
 
